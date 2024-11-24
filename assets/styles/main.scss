@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./colors.scss";
+// @import "./antdv.scss";
+
+// leaflet
+.leaflet-container .leaflet-control-attribution {
+    display: none !important;
+}
+
+.is_loading {
+    background: #ededed;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 12px;
+    background-size: 200% 100%;
+    animation: 1s loading_animation linear infinite;
+}
+
+@keyframes loading_animation {
+    to {
+        background-position-x: -200%;
+    }
+}

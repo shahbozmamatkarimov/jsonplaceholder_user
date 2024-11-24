@@ -1,0 +1,27 @@
+// Define your color variables
+$colors: (
+  cf4: #F4F3F9,
+);
+
+// Mixin to generate background color classes
+@mixin generate-bg-classes($color-map) {
+  @each $name, $color in $color-map {
+    .bg_#{$name} {
+      background-color: $color;
+    }
+    .c_#{$name} {
+      color: $color;
+    }
+    .b_#{$name} {
+      border: 1px solid $color;
+    }
+  };
+};
+
+// Function to get a color from the map
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+// Generate classes
+@include generate-bg-classes($colors);
